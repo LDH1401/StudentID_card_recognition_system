@@ -53,12 +53,14 @@ const UploadImage = () => {
       const data = await response.json();
       console.log("API DATA:", data);
 
-      if (data.student_code) {
+      // SỬA CHỖ NÀY: Dùng data.success để quyết định thành công hay thất bại
+      if (data.success) {
         setStudentId(data.student_code);
         // (Tùy chọn) Phát tiếng "Tít" khi thành công ở đây
       } else {
+        // Lấy thông báo lỗi từ Backend (ví dụ: "Bạn không có trong danh sách lớp!")
         setError(
-          "Không tìm thấy mã sinh viên. Hãy thử đưa thẻ vào sát khung hơn!",
+          data.message || "Không tìm thấy mã sinh viên. Hãy thử đưa thẻ vào sát khung hơn!",
         );
       }
     } catch (err) {
@@ -103,20 +105,9 @@ const UploadImage = () => {
           {!error && studentId && (
             <div className="result-box result-success">
               ✅ Điểm danh thành công! <br />
-              <span
-                style={{
-                  fontSize: "26px",
-                  fontWeight: "bold",
-                  display: "block",
-                  marginTop: "8px",
-                  color: "#d12027",
-                }}
-              >
-                {studentId}
-              </span>
+              <span>{studentId}</span>
             </div>
           )}
-
           {!error && !studentId && !isLoading && (
             <div className="result-box result-waiting">
               📌 Hãy đưa thẻ vào khung đứt nét và nhấn nút Chụp

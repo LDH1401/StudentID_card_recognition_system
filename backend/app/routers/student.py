@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app import crud, schemas
-# Giả sử bạn có file database.py chứa hàm get_db()
+
 from app.database import get_db 
 
 router = APIRouter(prefix="/students", tags=["Students"])
@@ -12,7 +12,7 @@ def create_student(student: schemas.StudentCreate, db: Session = Depends(get_db)
     # Kiểm tra xem mã SV đã tồn tại chưa
     db_student = crud.get_student_by_code(db, student_code=student.student_code)
     if db_student:
-        raise HTTPException(status_code=400, detail="Mã sinh viên đã tồn tại trong hệ thống")
+        raise HTTPException(status_code=400, detail="Mã sinh viên đã tồn tại")
     
     return crud.create_student(db=db, student=student)
 

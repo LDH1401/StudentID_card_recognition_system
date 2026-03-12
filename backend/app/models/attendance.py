@@ -12,7 +12,6 @@ class Attendance(Base):
     student_code = Column(String(20), ForeignKey("students.student_code")) 
     
     timestamp = Column(DateTime(timezone=True), server_default=func.now()) 
-    image_path = Column(String(255)) 
 
     # Mối quan hệ ngược lại: Lượt điểm danh này thuộc về ai
     student = relationship("Student", back_populates="attendances")

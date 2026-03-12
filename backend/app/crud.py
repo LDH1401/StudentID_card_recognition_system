@@ -3,8 +3,8 @@ from app.models import student as student_model
 from app.models import attendance as attendance_model
 from app import schemas
 
-# --- Các hàm cho Bảng Sinh Viên ---
 
+# các hàm cho sinh viên
 def get_student_by_code(db: Session, student_code: str):
     """Tìm sinh viên theo Mã SV"""
     return db.query(student_model.Student).filter(student_model.Student.student_code == student_code).first()
@@ -26,8 +26,8 @@ def get_all_students(db: Session, skip: int = 0, limit: int = 100):
     return db.query(student_model.Student).offset(skip).limit(limit).all()
 
 
-# --- Các hàm cho Bảng Điểm Danh ---
 
+# các hàm cho điểm danh
 def record_attendance(db: Session, student_code: str, image_path: str = None):
     """Ghi nhận 1 lượt điểm danh mới"""
     db_attendance = attendance_model.Attendance(
