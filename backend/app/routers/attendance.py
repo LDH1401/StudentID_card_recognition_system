@@ -63,7 +63,7 @@ async def checkin(file: UploadFile = File(...), db: Session = Depends(get_db)):
 
         crud.record_attendance(db, student_code=student_code)
 
-        # THÀNH CÔNG: Bắn tín hiệu WebSocket cho React xóa tên
+
         await manager.broadcast(json.dumps({
             "type": "CHECKIN_SUCCESS",
             "student_code": student.student_code
@@ -96,7 +96,6 @@ async def manual_checkin(request: ManualCheckinRequest, db: Session = Depends(ge
 
         crud.record_attendance(db, student_code=request.student_code)
         
-        # THÀNH CÔNG: Bắn tín hiệu WebSocket cho React
         await manager.broadcast(json.dumps({
             "type": "CHECKIN_SUCCESS",
             "student_code": request.student_code
@@ -114,7 +113,6 @@ async def reset_all_attendance(db: Session = Depends(get_db)):
     try:
         crud.reset_attendance(db)
         
-        # THÀNH CÔNG: Bắn tín hiệu yêu cầu React tải lại toàn bộ bảng
         await manager.broadcast(json.dumps({
             "type": "RESET_SUCCESS"
         }))

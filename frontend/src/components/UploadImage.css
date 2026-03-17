@@ -12,7 +12,7 @@
   border-radius: 12px;
   padding: 40px 30px;
   width: 100%;
-  max-width: 550px; /* Nới rộng một chút cho vừa camera */
+  max-width: 650px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   color: #333;
   text-align: center;
@@ -47,8 +47,8 @@
   height: 60%;
   border: 3px dashed rgba(255, 255, 255, 0.7);
   border-radius: 10px;
-  pointer-events: none; /* Tránh cản trở click chuột */
-  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.4); /* Làm tối xung quanh khung ngắm */
+  pointer-events: none;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.4);
 }
 
 .btn-upload {

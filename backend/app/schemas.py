@@ -18,7 +18,6 @@ class StudentResponse(StudentBase):
     """Schema dùng khi trả dữ liệu Sinh viên về cho Client (có thêm ID)"""
     id: int
 
-    # Bắt buộc có dòng này để Pydantic dịch được dữ liệu từ SQLAlchemy Object
     model_config = ConfigDict(from_attributes=True)
 
 

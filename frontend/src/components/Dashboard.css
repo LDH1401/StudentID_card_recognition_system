@@ -2,7 +2,6 @@
 .dashboard-container {
   padding: 40px 30px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* Hình nền Gradient ánh đỏ/hồng pastel siêu nhẹ nhàng */
   background: linear-gradient(135deg, #fff0f0 0%, #f4f6f9 100%);
   min-height: 100vh;
 }
@@ -13,7 +12,7 @@
 }
 
 .dashboard-title {
-  color: #d12027; /* MÀU ĐỎ CHUẨN */
+  color: #d12027;
   margin: 0;
   font-size: 32px;
   font-weight: 800;
@@ -228,7 +227,7 @@
   border: 1px solid #fed7d7;
 }
 
-/* --- NÚT HÀNH ĐỘNG (Viền Xanh Lá - Nền Trong Suốt) --- */
+/* --- NÚT HÀNH ĐỘNG --- */
 .btn-action {
   padding: 8px 16px;
   background-color: transparent; 
@@ -248,7 +247,7 @@
   background-color: rgba(40, 167, 69, 0.1); 
 }
 
-/* --- NÚT RESET DƯỚI CÙNG (Gradient Xanh Dương) --- */
+/* --- NÚT RESET DƯỚI CÙNG --- */
 .card-footer {
   margin-top: 30px;
   padding-top: 20px;

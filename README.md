@@ -5,11 +5,6 @@
   <figcaption><i>Giao diện điểm danh</i></figcaption>
 </figure>
 
-<figure align="center">
-  <img src="./images/dashboard.jpg" alt="Trang quản lý" />
-  <figcaption><i>Giao diện trang quản lý</i></figcaption>
-</figure>
-
 # 💻 Công nghệ sử dụng
 
 ### AI

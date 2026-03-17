@@ -26,7 +26,7 @@ def process_student_card(image_path: str):
         cropped_img = image[y_min:y_max, x_min:x_max]
     else:
         # Nếu YOLO không tìm thấy vùng mssv, gửi toàn bộ ảnh cho OCR
-        cropped_img = image
+        cropped_img = None
 
     # 3. Sử dụng PaddleOCR đọc chữ
     raw_text = ocr_service.extract_text(cropped_img)

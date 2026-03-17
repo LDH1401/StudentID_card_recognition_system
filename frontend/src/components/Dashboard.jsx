@@ -10,17 +10,16 @@ const Dashboard = () => {
   const [newName, setNewName] = useState('');
 
   useEffect(() => {
-    // 1. Tải danh sách lần đầu
     fetchStudents();
 
-    // 2. Mở kết nối WebSocket lắng nghe tự động
+    // Mở kết nối WebSocket 
     const ws = new WebSocket('ws://127.0.0.1:8000/attendance/ws');
 
     ws.onopen = () => {
       console.log("Đã kết nối Real-time với Backend");
     };
 
-    // 3. Xử lý khi nhận được tín hiệu từ máy chủ
+    // Xử lý khi nhận được tín hiệu từ máy chủ
     ws.onmessage = (event) => {
       const data = JSON.parse(event.data);
       
@@ -36,7 +35,7 @@ const Dashboard = () => {
       }
     };
 
-    // 4. Ngắt kết nối khi chuyển trang
+    // Ngắt kết nối khi chuyển trang
     return () => {
       ws.close();
     };
@@ -161,7 +160,7 @@ const Dashboard = () => {
           
           <div className="card-title-wrapper">
             <h2 className="card-title">
-               Danh sách Vắng mặt 
+               Danh sách vắng mặt 
               <span className="badge-count">{absentStudents.length}</span>
             </h2>
           </div>
