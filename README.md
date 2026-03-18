@@ -1,4 +1,4 @@
-# Hệ thống điểm danh \_ nhận diện MSSV
+# Hệ thống điểm danh & nhận diện MSSV
 
 <figure align="center">
   <img src="./images/test1.jpg" alt="Trang điểm danh" />
@@ -10,9 +10,13 @@
   <figcaption><i>Giao diện quản lí</i></figcaption>
 </figure>
 
+## 📋 Mô tả dự án
+
+Hệ thống tự động điểm danh sinh viên bằng cách nhận diện và trích xuất thông tin từ thẻ sinh viên thông qua công nghệ nhận diện ảnh (AI). Hệ thống giúp tiết kiệm thời gian điểm danh và quản lý lịch sử điểm danh của sinh viên một cách hiệu quả.
+
 ## 💻 Công nghệ sử dụng
 
-### AI
+### AI & Computer Vision
 
 - **YOLO (You Only Look Once):** Nhận diện và khoanh vùng (Object Detection) chính xác vị trí thẻ sinh viên trong khung hình.
 - **OpenCV:** Tiền xử lý ảnh
@@ -32,3 +36,4 @@
 ### Frontend
 
 - **ReactJS:** Xây dựng giao diện Single-Page Application (SPA)
+- **CSS & HTML:** Thiết kế giao diện người dùng
