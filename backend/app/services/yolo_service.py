@@ -20,19 +20,18 @@ class YOLOService:
                         
                         if class_name == 'mssv':
                             bbox = box.xyxy[0].cpu().numpy()
-                            print(f"✅ Found 'mssv' bbox: {bbox}")
+                            print(f"Found 'mssv' bbox: {bbox}")
                             return bbox
                     
                     # Nếu không tìm thấy 'mssv', trả về None
-                    print("❌ 'mssv' class not found in detected boxes")
                     print(f"Available classes: {[result.names[int(b.cls[0].item())] for b in result.boxes]}")
                     return None
                 else:
-                    print("❌ No boxes detected")
+                    print("No boxes detected")
                     return None
         
         except Exception as e:
-            print(f"❌ Error in detect_student_card: {e}")
+            print(f"Error in detect_student_card: {e}")
             return None
 
 yolo_service = YOLOService()

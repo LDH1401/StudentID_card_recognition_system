@@ -1,11 +1,16 @@
 # Hệ thống điểm danh \_ nhận diện MSSV
 
 <figure align="center">
-  <img src="./images/test.jpg" alt="Trang điểm danh" />
+  <img src="./images/test1.jpg" alt="Trang điểm danh" />
   <figcaption><i>Giao diện điểm danh</i></figcaption>
 </figure>
 
-# 💻 Công nghệ sử dụng
+<figure align="center">
+  <img src="./images/test2.jpg" alt="Trang điểm danh" />
+  <figcaption><i>Giao diện quản lí</i></figcaption>
+</figure>
+
+## 💻 Công nghệ sử dụng
 
 ### AI
 

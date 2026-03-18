@@ -7,7 +7,7 @@ from app.services.ocr_service import ocr_service
 def process_student_card(image_path: str):
     # 1. Kiểm tra file và đọc ảnh
     if not os.path.exists(image_path):
-        print(f"❌ File không tồn tại: {image_path}")
+        print(f"File không tồn tại: {image_path}")
         return None
         
     image = cv2.imread(image_path)
@@ -25,12 +25,12 @@ def process_student_card(image_path: str):
         x_min, x_max = max(0, x1-15), min(w, x2+15)
         cropped_img = image[y_min:y_max, x_min:x_max]
     else:
-        # Nếu YOLO không tìm thấy vùng mssv, gửi toàn bộ ảnh cho OCR
+        # YOLO không tìm thấy vùng mssv
         cropped_img = None
 
     # 3. Sử dụng PaddleOCR đọc chữ
     raw_text = ocr_service.extract_text(cropped_img)
-    print(f"👉 [DEBUG] OCR nhận diện: '{raw_text}'")
+    print(f"[DEBUG] OCR nhận diện: '{raw_text}'")
 
     # 4. Hậu xử lý
     clean_text = raw_text.replace(" ", "").upper()
@@ -41,7 +41,7 @@ def process_student_card(image_path: str):
 
     if match:
         final_result = match.group()
-        print(f"✅ Tìm thấy MSSV: {final_result}")
+        print(f"[INFO] Tìm thấy MSSV: {final_result}")
         return final_result
     
     return clean_text if clean_text else "Không nhận diện được"
