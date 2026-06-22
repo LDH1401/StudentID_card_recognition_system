@@ -1,9 +1,9 @@
 import React from 'react';
-import UploadImage from '../components/UploadImage';
+import UploadImage from '../components/scan/UploadImage';
 
 const ScanPage = () => {
   return (
-    <div style={{ backgroundColor: '#242424', minHeight: '100vh' }}>
+    <div>
       <UploadImage />
     </div>
   );

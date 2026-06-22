@@ -17,8 +17,6 @@ logging.getLogger('ppocr').setLevel(logging.ERROR)
 class OCRService:
     def __init__(self):
         # Khởi tạo PaddleOCR
-        # use_angle_cls=True: Tự động xoay chữ nếu thẻ bị nghiêng
-        # lang='en': Đọc số và chữ không dấu nhanh và chuẩn nhất
         self.reader = PaddleOCR(use_angle_cls=True, lang='en')
 
     def extract_text(self, image_crop):
@@ -26,6 +24,11 @@ class OCRService:
         Nhận diện chữ từ vùng ảnh đã cắt.
         image_crop: mảng numpy (OpenCV)
         """
+        # BẢO VỆ: Chặn lỗi "Not supported input data type" do biến None
+        if image_crop is None or image_crop.size == 0:
+            print("[OCR] Bỏ qua vì ảnh cắt bị rỗng.")
+            return ""
+
         try:
             # Gọi hàm ocr (đã bỏ cls=True để tránh lỗi TypeError ở bản mới)
             result = self.reader.ocr(image_crop)
